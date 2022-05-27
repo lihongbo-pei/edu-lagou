@@ -2,6 +2,7 @@ package com.lagou.educommentboot.controller;
 
 import com.lagou.eduapi.entity.CourseComment;
 import com.lagou.educommentboot.service.CommentService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +17,7 @@ import java.util.List;
 @RestController
 @RequestMapping("course")
 @CrossOrigin
+@Slf4j
 public class CommentController {
 
     @Autowired // 远程消费
@@ -26,7 +28,8 @@ public class CommentController {
     public Object saveCourseComment(Integer courseid,Integer userid,String username,String comment) throws UnsupportedEncodingException {
         username = new String( username.getBytes("ISO-8859-1"),"UTF-8" );
         comment = new String( comment.getBytes("ISO-8859-1"),"UTF-8" );
-        System.out.println("昵称：" + username);
+//        System.out.println("昵称：" + username);
+        log.info("昵称：" + username);
         CourseComment courseComment = new CourseComment();
         courseComment.setCourseId(courseid); // 课程编号
         courseComment.setSectionId(0); // 章节编号 （预留字段，为项目的2.0版本保留）

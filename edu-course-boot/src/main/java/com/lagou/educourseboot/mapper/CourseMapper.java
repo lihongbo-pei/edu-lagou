@@ -3,6 +3,7 @@ package com.lagou.educourseboot.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.lagou.educourseboot.entity.Course;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -11,6 +12,7 @@ import java.util.List;
  * @date 2022/5/10 11:22
  * @description:
  */
+@Service
 public interface CourseMapper extends BaseMapper<Course> {
 
     /**
